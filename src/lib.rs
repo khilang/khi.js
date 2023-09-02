@@ -25,7 +25,6 @@ pub fn preprocess_latex(str: &str) -> Result<String, String> {
         Err(e) => return Err(match e {
             TexPreprocessorError::IllegalTable(p) => format!("Illegal sequence found at {}:{}.", p.line, p.column),
             TexPreprocessorError::IllegalDictionary(p) => format!("Illegal dictionary found at {}:{}.", p.line, p.column),
-            TexPreprocessorError::TabulateExpectedArg(p) => format!("Tabulation expected argument at {}:{}.", p.line, p.column),
             TexPreprocessorError::ZeroTable(p) => format!("Table cannot be empty at {}:{}.", p.line, p.column),
             TexPreprocessorError::UnknownCommand(p, c) => format!("Unknown command {} found at {}:{}.", &c, p.line, p.column),
             TexPreprocessorError::MissingOptionalArgument(p) => format!("Missing optional argument at {}:{}.", p.line, p.column),
