@@ -7,5 +7,5 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
-khi = { version = "0.8", features = ["tex", "html"] }
+khi = { version = "0.9", features = ["tex", "html"] }
 wasm-bindgen = "0.2"
